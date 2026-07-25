@@ -50,7 +50,7 @@ window.ROUTE_DATA = {
 },
 "runTotal": 4.5
 },
-"r3": {
+"r2": {
 "stops": [
 {
 "key": "bikini",
@@ -98,7 +98,7 @@ window.ROUTE_DATA = {
 },
 "runTotal": 3.8
 },
-"r4": {
+"r3": {
 "stops": [
 {
 "key": "sonicbethany",
@@ -146,7 +146,7 @@ window.ROUTE_DATA = {
 },
 "runTotal": 1.6
 },
-"r8": {
+"r4": {
 "stops": [
 {
 "key": "1343 W Broadway Rd, Tempe, AZ",
@@ -180,7 +180,7 @@ window.ROUTE_DATA = {
 "walkEnd": null,
 "runTotal": 2.5
 },
-"r9": {
+"r5": {
 "stops": [
 {
 "key": "1343 W Broadway Rd, Tempe, AZ",
@@ -214,7 +214,7 @@ window.ROUTE_DATA = {
 "walkEnd": null,
 "runTotal": 4.8
 },
-"r10": {
+"r6": {
 "stops": [
 {
 "key": "4829 E Indian School Rd, Phoenix, AZ",
@@ -248,7 +248,7 @@ window.ROUTE_DATA = {
 "walkEnd": null,
 "runTotal": 4.0
 },
-"r11": {
+"r7": {
 "stops": [
 {
 "key": "235 W University Dr, Mesa, AZ",

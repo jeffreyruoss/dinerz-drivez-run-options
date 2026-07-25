@@ -8,18 +8,24 @@ Static site, 1950s diner styling. No build step.
 
 ## Scoped to a 6:30pm Saturday start
 
-Every stop on the page is open for a 6:30pm Saturday start. Routes 02, 05, 06 and 07 were
-dropped for closing too early (Lucky Boy 6pm Sat, Sunny's Diner 3pm, Joe's Diner 2pm);
-routes 08–11 were added afterwards. Numbering is left unchanged throughout so a route
-always means the same thing.
+Every stop on the page is open for a 6:30pm Saturday start. Of the seven routes originally
+scouted, four were cut for closing too early (Lucky Boy 6pm Sat took out two, Sunny's Diner
+3pm and Joe's Diner 2pm one each) and four new ones were found to replace them. The result
+is renumbered **01–07** in page order:
 
-Route 03 is the tight one — MacAlpine's is its last stop and closes at 8pm.
+| # | Route | Run | Diner / Drive-in / Dive |
+| --- | --- | --- | --- |
+| 01 | Central Corridor | 4.5 mi | 5 & Diner / Eat Up / Chopper Johns |
+| 02 | Grand Ave Loop | 3.8 mi | Welcome Diner / MacAlpine's / Bikini Lounge |
+| 03 | Andrea's Westside | 1.6 mi | Denny's / Sonic / Skippers Lounge |
+| 04 | Tempe Broadway | 2.5 mi | Denny's / Sonic / Palo Verde Lounge |
+| 05 | Yucca / Southern | 4.8 mi | Denny's / Sonic / Yucca Tap Room |
+| 06 | Arcadia 44th St | 4.0 mi | IHOP / Sonic / JT's Bar & Grill |
+| 07 | Mesa Country Club | 3.3 mi | Denny's / Sonic / Gabby's |
 
-**Sonic caveat:** five routes use a Sonic as the drive-in, and most Sonics have no indoor
-dining. Route 04 already ran that way, but if "a drive-in you can go inside" is read
-strictly, only routes 01 (Eat Up) and 03 (MacAlpine's) clear it outright.
+Route 02 is the tight one — MacAlpine's is its last stop and closes at 8pm.
 
-### How routes 08–11 were found
+### How routes 04–07 were found
 
 1. Pulled every bar, pub, restaurant and fast-food venue in the Phoenix metro from
    OpenStreetMap via Overpass (`scripts/find_candidates.py` territory — the query lives in
