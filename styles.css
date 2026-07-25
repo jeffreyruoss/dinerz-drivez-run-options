@@ -1,0 +1,658 @@
+/* ==========================================================================
+   Dinerz, Drive-Inz & Divez — 1950s diner styling
+   ========================================================================== */
+
+:root{
+  --cream:#F6EAD3;
+  --paper:#FFFBF0;
+  --cherry:#D42A3C;
+  --cherry-dk:#96131F;
+  --aqua:#31B3A8;
+  --aqua-dk:#1B7F78;
+  --mustard:#E8A427;
+  --ink:#221C18;
+  --ink-2:#5B5049;
+  --night:#171210;
+  --board:#1E2A26;
+  --warn:#B5541A;
+
+  --chrome-hi:#FFFFFF;
+  --chrome-1:#E7EDF2;
+  --chrome-2:#B7C2CC;
+  --chrome-3:#8A96A1;
+
+  --chrome: linear-gradient(180deg,
+    #FFFFFF 0%, #E9EFF4 34%, #AFBAC4 50%,
+    #D9E1E8 58%, #F4F8FB 78%, #C9D3DB 100%);
+
+  --shadow-hard: 6px 6px 0 rgba(34,28,24,.28);
+  --font-display:'Alfa Slab One', Georgia, serif;
+  --font-script:'Pacifico', cursive;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+  --font-body:'IBM Plex Sans', system-ui, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+h1,h2,h3,h4{margin:0;}
+
+:focus-visible{outline:3px solid var(--aqua); outline-offset:2px;}
+
+/* ---------- Trim: checkerboard, scallop, chrome rail --------------------- */
+
+.checker{
+  height:16px;
+  background-image:
+    linear-gradient(45deg, var(--ink) 25%, transparent 25% 75%, var(--ink) 75%),
+    linear-gradient(45deg, var(--ink) 25%, transparent 25% 75%, var(--ink) 75%);
+  background-size:16px 16px;
+  background-position:0 0, 8px 8px;
+  background-color:var(--paper);
+}
+
+.rail{
+  height:9px;
+  background:var(--chrome);
+  border-top:1px solid rgba(255,255,255,.9);
+  border-bottom:1px solid rgba(34,28,24,.35);
+}
+
+/* diner awning: solid band with half-round scallops hanging off the bottom */
+.scallop{
+  height:23px;
+  background:
+    radial-gradient(circle at 11px 12px, var(--cherry) 0 11px, transparent 11.5px) 0 0/22px 23px repeat-x,
+    linear-gradient(var(--cherry), var(--cherry)) 0 0/100% 12px no-repeat;
+  filter:drop-shadow(0 2px 0 rgba(34,28,24,.22));
+}
+
+/* ---------- Hero: the neon sign at night -------------------------------- */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:64px 24px 52px;
+  text-align:center;
+  color:var(--cream);
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 30%, #2E2320 0%, transparent 70%),
+    radial-gradient(circle at 12% 18%, rgba(49,179,168,.13), transparent 42%),
+    radial-gradient(circle at 88% 76%, rgba(212,42,60,.15), transparent 45%),
+    var(--night);
+}
+/* atomic-age dot field */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(rgba(246,234,211,.16) 1.2px, transparent 1.2px);
+  background-size:26px 26px;
+  opacity:.55;
+  pointer-events:none;
+}
+.sparkle{
+  position:absolute;
+  pointer-events:none;
+  opacity:.5;
+}
+.sparkle svg{display:block;}
+.sparkle.s1{top:34px;  left:6%;  width:54px;}
+.sparkle.s2{bottom:40px; right:8%; width:74px;}
+.sparkle.s3{top:64%; left:11%; width:34px;}
+.sparkle.s4{top:14%; right:17%; width:28px;}
+
+.hero-inner{position:relative; z-index:1;}
+
+.open-sign{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#FFE9EC;
+  padding:7px 16px 6px 20px;
+  margin-bottom:20px;
+  border:2px solid var(--cherry);
+  border-radius:999px;
+  background:rgba(212,42,60,.1);
+  text-shadow:0 0 8px rgba(255,90,110,.9);
+  box-shadow:0 0 12px rgba(212,42,60,.55), inset 0 0 12px rgba(212,42,60,.4);
+}
+
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(32px, 7.4vw, 74px);
+  line-height:1.08;
+  letter-spacing:.02em;
+  color:#FF5A6E;
+  text-shadow:
+    0 0 6px rgba(255,90,110,.95),
+    0 0 22px rgba(212,42,60,.75),
+    0 0 52px rgba(212,42,60,.45),
+    4px 5px 0 rgba(0,0,0,.55);
+}
+.hero h1 .aqua{
+  color:#6FE6DB;
+  text-shadow:
+    0 0 6px rgba(111,230,219,.95),
+    0 0 22px rgba(49,179,168,.75),
+    0 0 52px rgba(49,179,168,.4),
+    4px 5px 0 rgba(0,0,0,.55);
+}
+
+.tagline{
+  font-family:var(--font-script);
+  font-size:clamp(19px, 3.4vw, 32px);
+  color:#FFD37A;
+  margin:14px 0 6px;
+  text-shadow:0 0 8px rgba(232,164,39,.8), 0 0 26px rgba(232,164,39,.45), 2px 3px 0 rgba(0,0,0,.5);
+}
+
+.hero-sub{
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(246,234,211,.62);
+  margin:14px 0 0;
+}
+
+/* ---------- Placemat: the rules ----------------------------------------- */
+
+.placemat-wrap{padding:34px 20px 6px;}
+.placemat{
+  max-width:760px;
+  margin:0 auto;
+  position:relative;
+  background:var(--paper);
+  border:2px solid var(--ink);
+  border-radius:14px;
+  padding:24px 26px 22px;
+  box-shadow:var(--shadow-hard);
+}
+.placemat::before{
+  content:"";
+  position:absolute; inset:7px;
+  border:1.5px dashed var(--chrome-3);
+  border-radius:9px;
+  pointer-events:none;
+}
+.placemat h2{
+  font-family:var(--font-display);
+  font-size:15px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--cherry-dk);
+  text-align:center;
+  margin-bottom:12px;
+}
+.placemat p{margin:0; font-size:14.5px; color:var(--ink-2);}
+.placemat b{color:var(--cherry-dk);}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:10px 20px;
+  justify-content:center;
+  margin:26px auto 0;
+  padding:0 20px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.legend span{display:flex; align-items:center; gap:8px;}
+.dot{
+  width:13px; height:13px; border-radius:50%;
+  border:2px solid var(--ink);
+  box-shadow:1px 1px 0 rgba(34,28,24,.3);
+}
+
+/* ---------- Sticky nav: the chrome counter ------------------------------ */
+
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; gap:9px;
+  padding:11px 16px;
+  margin-top:30px;
+  overflow-x:auto;
+  background:var(--chrome);
+  border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink);
+  box-shadow:0 4px 12px rgba(34,28,24,.22);
+  scrollbar-width:thin;
+}
+.nav a{
+  flex:0 0 auto;
+  display:flex; align-items:baseline; gap:7px;
+  font-family:var(--font-mono);
+  font-size:11.5px; font-weight:600;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--paper);
+  border:2px solid var(--ink);
+  border-radius:999px;
+  padding:7px 14px;
+  white-space:nowrap;
+  box-shadow:2px 2px 0 rgba(34,28,24,.28);
+  transition:transform .12s ease, background .12s ease, color .12s ease;
+}
+.nav a .n{color:var(--cherry-dk);}
+.nav a .d{color:var(--ink-2); font-size:10.5px;}
+.nav a:hover, .nav a:focus-visible{
+  background:var(--cherry); color:#fff;
+  transform:translate(-1px,-1px);
+  box-shadow:3px 3px 0 rgba(34,28,24,.4);
+}
+.nav a:hover .n, .nav a:hover .d,
+.nav a:focus-visible .n, .nav a:focus-visible .d{color:#FFE0C4;}
+
+/* ---------- The menu board ---------------------------------------------- */
+
+.board-wrap{max-width:1000px; margin:46px auto 8px; padding:0 20px;}
+.board{
+  position:relative;
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 0%, rgba(255,255,255,.06), transparent 60%),
+    var(--board);
+  border:3px solid var(--ink);
+  border-radius:12px;
+  padding:26px 22px 22px;
+  box-shadow:var(--shadow-hard), inset 0 0 60px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.board .sparkle{opacity:.16;}
+.board .sparkle.b1{top:-14px; right:-10px; width:110px;}
+.board h2{
+  font-family:var(--font-display);
+  font-size:clamp(19px,3.4vw,26px);
+  text-align:center;
+  color:var(--mustard);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5);
+  margin-bottom:4px;
+}
+.board .board-sub{
+  text-align:center;
+  font-family:var(--font-mono);
+  font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(246,234,211,.5);
+  margin-bottom:20px;
+}
+
+.board-scroll{overflow-x:auto;}
+.ov-table{
+  width:100%;
+  min-width:660px;
+  border-collapse:collapse;
+  font-size:13px;
+  color:var(--cream);
+}
+.ov-table th{
+  font-family:var(--font-mono);
+  font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  text-align:left;
+  color:#FFC9CF;
+  padding:0 12px 9px;
+  border-bottom:2px solid rgba(246,234,211,.32);
+}
+.ov-table td{
+  padding:11px 12px;
+  border-bottom:1px dashed rgba(246,234,211,.16);
+  vertical-align:top;
+}
+.ov-table tbody tr:last-child td{border-bottom:none;}
+.ov-table tbody tr:hover td{background:rgba(246,234,211,.06);}
+.ov-table td:first-child{font-weight:600;}
+.ov-table td:first-child a{text-decoration:none; color:var(--mustard);}
+.ov-table td:first-child a:hover{text-decoration:underline;}
+.ov-table td.mi{font-family:var(--font-mono); font-weight:600; color:#6FE6DB; white-space:nowrap;}
+.ov-table td.park{font-family:var(--font-mono); font-size:11.5px; color:rgba(246,234,211,.62); white-space:nowrap;}
+
+/* ---------- Route cards -------------------------------------------------- */
+
+.routes{max-width:1000px; margin:0 auto; padding:10px 20px 70px;}
+
+.route{
+  background:var(--paper);
+  border:3px solid var(--ink);
+  border-radius:16px;
+  margin:34px 0;
+  overflow:hidden;
+  scroll-margin-top:78px;
+  box-shadow:var(--shadow-hard);
+}
+
+.route-head{
+  display:flex; align-items:center; gap:18px;
+  flex-wrap:wrap;
+  padding:18px 22px;
+  color:#FFF4E4;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 14px, transparent 14px 28px),
+    linear-gradient(180deg, var(--cherry) 0%, var(--cherry-dk) 100%);
+  border-bottom:3px solid var(--ink);
+}
+.badge{
+  flex:0 0 auto;
+  width:54px; height:54px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background:var(--chrome);
+  border:3px solid var(--ink);
+  font-family:var(--font-display);
+  font-size:19px;
+  color:var(--ink);
+  box-shadow:inset 0 -3px 6px rgba(0,0,0,.18), 2px 2px 0 rgba(0,0,0,.3);
+}
+.route-title{flex:1 1 240px; min-width:0;}
+.route-title h3{
+  font-family:var(--font-display);
+  font-size:clamp(19px,2.9vw,26px);
+  line-height:1.2;
+  letter-spacing:.01em;
+  text-shadow:2px 2px 0 rgba(0,0,0,.35);
+}
+.route-title .sub{
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  color:rgba(255,244,228,.78);
+  margin-top:4px;
+}
+.flag{
+  display:inline-block;
+  margin-top:8px;
+  font-family:var(--font-mono);
+  font-size:10px; font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:var(--mustard);
+  border:2px solid var(--ink);
+  border-radius:999px;
+  padding:3px 11px;
+  box-shadow:2px 2px 0 rgba(0,0,0,.3);
+}
+
+.odometer{
+  flex:0 0 auto;
+  font-family:var(--font-mono);
+  text-align:center;
+  min-width:126px;
+  padding:9px 16px 8px;
+  border-radius:9px;
+  border:3px solid var(--ink);
+  background:var(--chrome);
+  box-shadow:2px 2px 0 rgba(0,0,0,.3);
+}
+.odometer .num{
+  font-size:23px; font-weight:600; letter-spacing:.04em;
+  color:var(--cherry-dk);
+}
+.odometer .lbl{
+  font-size:8.5px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--ink-2); margin-top:1px;
+}
+
+/* --- the run strip ------------------------------------------------------- */
+
+.trip{display:flex; align-items:stretch; padding:24px 22px 6px;}
+
+.stop{
+  flex:1 1 200px;
+  position:relative;
+  background:var(--cream);
+  border:2px solid var(--ink);
+  border-radius:12px;
+  padding:15px 16px 14px;
+  box-shadow:3px 3px 0 rgba(34,28,24,.2);
+}
+.stop .num{
+  position:absolute; top:-11px; left:-11px;
+  width:26px; height:26px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:2px solid var(--ink);
+  background:var(--paper);
+  font-family:var(--font-mono);
+  font-size:12px; font-weight:600;
+  box-shadow:1px 1px 0 rgba(34,28,24,.3);
+}
+.tag{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:9.5px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  padding:3px 9px;
+  border:1.5px solid var(--ink);
+  border-radius:999px;
+  margin-bottom:9px;
+  color:#fff;
+}
+.tag.drivein{background:var(--aqua);}
+.tag.diner{background:var(--cherry);}
+.tag.dive{background:var(--mustard); color:var(--ink);}
+
+.stop h4{font-size:16.5px; line-height:1.25; margin-bottom:4px;}
+.stop .addr{font-size:12px; color:var(--ink-2); margin:0 0 7px;}
+.stop .hours{font-size:12.5px; margin:0;}
+.stop .hours b{color:var(--cherry-dk); font-weight:600;}
+
+.leg{
+  flex:0 0 96px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:3px;
+  font-family:var(--font-mono);
+  padding:0 4px;
+}
+.leg .line{
+  width:100%;
+  border-top:3px dotted var(--cherry);
+  position:relative;
+}
+.leg .line::after{
+  content:"";
+  position:absolute; right:-2px; top:-6px;
+  border-left:9px solid var(--cherry);
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+}
+.leg .mi{font-size:13px; font-weight:600; color:var(--cherry-dk);}
+.leg .lbl{font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2);}
+
+/* --- parking ------------------------------------------------------------- */
+
+.park-section{
+  display:flex; gap:14px; flex-wrap:wrap;
+  padding:20px 22px 4px;
+}
+.park-box{
+  flex:1 1 250px;
+  display:flex; align-items:flex-start; gap:12px;
+  border:2px dashed var(--chrome-3);
+  border-radius:12px;
+  padding:13px 15px;
+  background:rgba(49,179,168,.06);
+}
+.park-box .p{
+  flex:0 0 auto;
+  width:30px; height:30px;
+  display:grid; place-items:center;
+  border-radius:7px;
+  background:var(--aqua-dk);
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:15px;
+  border:2px solid var(--ink);
+}
+.park-box .k{
+  font-family:var(--font-mono);
+  font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-2);
+}
+.park-box .mi-big{
+  font-family:var(--font-mono);
+  font-size:19px; font-weight:600;
+  color:var(--aqua-dk);
+  line-height:1.2;
+}
+.park-box .lot{font-size:13px; font-weight:600;}
+.park-box .lot .addr{font-size:11.5px; font-weight:400; color:var(--ink-2);}
+.park-box.unconfirmed{border-color:var(--warn); background:rgba(181,84,26,.07);}
+.park-box.unconfirmed .p{background:var(--warn);}
+.park-box.unconfirmed .mi-big{color:var(--warn);}
+
+/* --- map ----------------------------------------------------------------- */
+
+.map-wrap{padding:20px 22px 4px;}
+.map-plate{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:10px; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--cream);
+  background:var(--ink);
+  padding:5px 12px 4px;
+  border-radius:7px 7px 0 0;
+}
+.map-embed{
+  border:3px solid var(--ink);
+  border-radius:0 12px 12px 12px;
+  overflow:hidden;
+  box-shadow:4px 4px 0 rgba(34,28,24,.25);
+  background:var(--cream);
+}
+/* taller than a typical banner so N–S routes (most of them) fill the frame */
+.map{height:420px; width:100%;}
+/* vintage paper tint on the basemap only — route lines stay vivid */
+.map .leaflet-tile-pane{filter:sepia(.45) saturate(1.25) contrast(1.12);}
+.map .leaflet-container{background:var(--cream); font-family:var(--font-body);}
+.map .leaflet-control-attribution{font-size:9.5px; background:rgba(255,251,240,.86);}
+.map .leaflet-bar a{color:var(--ink);}
+
+.map-key{
+  display:flex; flex-wrap:wrap; gap:8px 18px;
+  padding:10px 2px 0;
+  font-family:var(--font-mono);
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-2);
+}
+.map-key span{display:flex; align-items:center; gap:7px;}
+.map-key i{display:block; width:22px; height:0; border-top:3px solid var(--cherry);}
+.map-key i.walk{border-top:3px dashed var(--aqua-dk);}
+
+/* Leaflet marker pucks */
+.pin{
+  width:26px; height:26px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:2.5px solid var(--ink);
+  background:var(--paper);
+  font-family:var(--font-mono);
+  font-size:12px; font-weight:600;
+  color:#fff;
+  box-shadow:0 2px 4px rgba(0,0,0,.4);
+}
+.pin.drivein{background:var(--aqua);}
+.pin.diner{background:var(--cherry);}
+.pin.dive{background:var(--mustard); color:var(--ink);}
+.pin.park{
+  border-radius:6px;
+  width:24px; height:24px;
+  font-family:var(--font-display);
+  font-size:13px;
+  background:var(--aqua-dk);
+}
+.leaflet-popup-content{font-family:var(--font-body); font-size:13px; margin:11px 14px;}
+.leaflet-popup-content b{display:block; font-size:14px; margin-bottom:2px;}
+.leaflet-popup-content .t{
+  font-family:var(--font-mono); font-size:9.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2);
+}
+
+/* --- footer of a card ---------------------------------------------------- */
+
+.route-foot{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  padding:18px 22px 20px;
+  margin-top:18px;
+  border-top:2px dashed var(--chrome-2);
+}
+.btn{
+  font-family:var(--font-mono);
+  font-size:11.5px; font-weight:600;
+  letter-spacing:.06em;
+  text-decoration:none;
+  color:var(--aqua-dk);
+  background:var(--paper);
+  border:2px solid var(--aqua-dk);
+  border-radius:999px;
+  padding:9px 17px;
+  box-shadow:2px 2px 0 rgba(34,28,24,.25);
+  transition:transform .12s ease, background .12s ease, color .12s ease;
+}
+.btn:hover, .btn:focus-visible{
+  background:var(--aqua-dk); color:#fff;
+  transform:translate(-1px,-1px);
+  box-shadow:3px 3px 0 rgba(34,28,24,.35);
+}
+.btn.alt{color:var(--cherry-dk); border-color:var(--cherry-dk);}
+.btn.alt:hover, .btn.alt:focus-visible{background:var(--cherry-dk); color:#fff;}
+.note{
+  flex:1 1 220px;
+  font-size:11.5px; font-style:italic;
+  color:var(--ink-2);
+  text-align:right;
+}
+
+/* ---------- Page footer -------------------------------------------------- */
+
+footer{
+  background:var(--night);
+  color:rgba(246,234,211,.66);
+  text-align:center;
+  padding:38px 22px 44px;
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  line-height:1.9;
+}
+footer .fscript{
+  display:block;
+  font-family:var(--font-script);
+  font-size:24px;
+  color:#6FE6DB;
+  text-shadow:0 0 8px rgba(111,230,219,.7), 0 0 24px rgba(49,179,168,.4);
+  margin-bottom:14px;
+}
+footer p{max-width:620px; margin:0 auto;}
+footer a{color:var(--mustard);}
+
+/* ---------- Responsive --------------------------------------------------- */
+
+@media (max-width:760px){
+  .trip{flex-direction:column; padding:26px 18px 4px;}
+  .stop{flex:1 1 auto;}
+  .leg{flex:0 0 auto; flex-direction:row; gap:10px; width:100%; padding:12px 0;}
+  .leg .line{width:auto; flex:1;}
+  .park-section, .map-wrap, .route-foot{padding-left:18px; padding-right:18px;}
+  .route-head{padding:16px 18px; gap:14px;}
+  .odometer{flex:1 1 100%;}
+  .note{text-align:left;}
+  .map{height:340px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
