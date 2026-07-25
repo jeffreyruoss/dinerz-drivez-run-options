@@ -8,12 +8,28 @@ Static site, 1950s diner styling. No build step.
 
 ## Scoped to a 6:30pm Saturday start
 
-Seven routes were scouted; the page shows the **three** where all three stops are still
-open at 6:30pm on a Saturday. Dropped: routes 02 and 07 (Lucky Boy closes 6pm Sat),
-05 (Sunny's Diner, 3pm) and 06 (Joe's Diner, 2pm). Route numbering is unchanged so the
-surviving routes keep the names people already know them by.
+Every stop on the page is open for a 6:30pm Saturday start. Routes 02, 05, 06 and 07 were
+dropped for closing too early (Lucky Boy 6pm Sat, Sunny's Diner 3pm, Joe's Diner 2pm);
+routes 08–11 were added afterwards. Numbering is left unchanged throughout so a route
+always means the same thing.
 
 Route 03 is the tight one — MacAlpine's is its last stop and closes at 8pm.
+
+**Sonic caveat:** five routes use a Sonic as the drive-in, and most Sonics have no indoor
+dining. Route 04 already ran that way, but if "a drive-in you can go inside" is read
+strictly, only routes 01 (Eat Up) and 03 (MacAlpine's) clear it outright.
+
+### How routes 08–11 were found
+
+1. Pulled every bar, pub, restaurant and fast-food venue in the Phoenix metro from
+   OpenStreetMap via Overpass (`scripts/find_candidates.py` territory — the query lives in
+   the commit history).
+2. Cross-referenced the bar list against published Phoenix dive-bar guides, since OSM has
+   no "dive" tag and only ~15% of its bars carry `opening_hours`.
+3. Clustered each dive against the nearest late-night diner and drive-in.
+4. Verified Saturday hours for every surviving venue individually before adding it. This
+   step killed a North Phoenix route — the Sonic at 17238 N 19th Ave is listed as
+   permanently closed.
 
 ## What's here
 

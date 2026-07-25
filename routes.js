@@ -145,5 +145,141 @@ window.ROUTE_DATA = {
 "geom": "o_skEfsokT?g@tJ@Af@"
 },
 "runTotal": 1.6
+},
+"r8": {
+"stops": [
+{
+"key": "1343 W Broadway Rd, Tempe, AZ",
+"lat": 33.4071059,
+"lon": -111.9597787
+},
+{
+"key": "1015 W Broadway Rd, Tempe, AZ",
+"lat": 33.407067,
+"lon": -111.9548004
+},
+{
+"key": "1122 E Broadway Rd, Tempe, AZ",
+"lat": 33.4083811,
+"lon": -111.9212024
+}
+],
+"startLot": null,
+"endLot": null,
+"runLegs": [
+{
+"mi": 0.38,
+"geom": "_x{jErcjjT?z@kB?Bw_@`AH"
+},
+{
+"mi": 2.09,
+"geom": "ey{jE`eijTaAINydAe@aeBL_g@{EZ@h@\\B"
+}
+],
+"walkStart": null,
+"walkEnd": null,
+"runTotal": 2.5
+},
+"r9": {
+"stops": [
+{
+"key": "1343 W Broadway Rd, Tempe, AZ",
+"lat": 33.4071059,
+"lon": -111.9597787
+},
+{
+"key": "29 W Southern Ave, Tempe, AZ",
+"lat": 33.392619,
+"lon": -111.9406193
+},
+{
+"key": "1122 E Broadway Rd, Tempe, AZ",
+"lat": 33.4083811,
+"lon": -111.9212024
+}
+],
+"startLot": null,
+"endLot": null,
+"runLegs": [
+{
+"mi": 2.41,
+"geom": "_x{jErcjjT?z@kB?@i}B|`B{@CvCcCD?r@"
+},
+{
+"mi": 2.38,
+"geom": "s}xjEzkfjT?s@bCEBwC}`Bd@EstB{EZ@h@\\B"
+}
+],
+"walkStart": null,
+"walkEnd": null,
+"runTotal": 4.8
+},
+"r10": {
+"stops": [
+{
+"key": "4829 E Indian School Rd, Phoenix, AZ",
+"lat": 33.4942123,
+"lon": -111.9765912
+},
+{
+"key": "2501 N 44th St, Phoenix, AZ",
+"lat": 33.4751439,
+"lon": -111.9865782
+},
+{
+"key": "(33.4810632, -112.009958, 'Sonic, 3330 E Thomas Ave, Phoenix (OSM node)')",
+"lat": 33.4810632,
+"lon": -112.009958
+}
+],
+"startLot": null,
+"endLot": null,
+"runLegs": [
+{
+"mi": 2.07,
+"geom": "yzlkEtlmjTm@Nw@p_AbqBXByE~Ab@|DSb@`A"
+},
+{
+"mi": 1.92,
+"geom": "uaikEhjojTc@aAr@o@t@dB@vBsb@D_@lmCkD?Jv@l@C"
+}
+],
+"walkStart": null,
+"walkEnd": null,
+"runTotal": 4.0
+},
+"r11": {
+"stops": [
+{
+"key": "235 W University Dr, Mesa, AZ",
+"lat": 33.4219685,
+"lon": -111.8380663
+},
+{
+"key": "635 N Country Club Dr, Mesa, AZ",
+"lat": 33.4264435,
+"lon": -111.839278
+},
+{
+"key": "1210 E Main St, Mesa, AZ",
+"lat": 33.4154243,
+"lon": -111.8049431
+}
+],
+"startLot": null,
+"endLot": null,
+"runLegs": [
+{
+"mi": 0.45,
+"geom": "iv~jEdjriToA??~JcNDSLcF?@wAsAA"
+},
+{
+"mi": 2.81,
+"geom": "gr_kE~sriTrA@AvAzUJEexErh@D?i@~@?"
+}
+],
+"walkStart": null,
+"walkEnd": null,
+"runTotal": 3.3
 }
 };

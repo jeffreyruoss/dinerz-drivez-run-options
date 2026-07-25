@@ -522,6 +522,8 @@ h1,h2,h3,h4{margin:0;}
 }
 .park-box .lot{font-size:13px; font-weight:600;}
 .park-box .lot .addr{font-size:11.5px; font-weight:400; color:var(--ink-2);}
+/* venue has its own lot — no separate parking leg to walk */
+.park-box .mi-big.onsite{font-size:15px; letter-spacing:.1em; text-transform:uppercase;}
 .park-box.unconfirmed{border-color:var(--warn); background:rgba(181,84,26,.07);}
 .park-box.unconfirmed .p{background:var(--warn);}
 .park-box.unconfirmed .mi-big{color:var(--warn);}
