@@ -50,16 +50,14 @@ def leg(a, b):
         time.sleep(2)
     raise SystemExit(f"FAILED leg {a} -> {b}")
 
+# Routes 02, 05, 06 and 07 were dropped: Lucky Boy (6pm Sat), Sunny's Diner (3pm)
+# and Joe's Diner (2pm) all close before the 6:30pm Saturday start.
 # route key -> ordered chain of point keys; "run" legs are between stops,
 # "walk" legs are parking<->stop. chain = [park_start?, stop, stop, stop, park_end?]
 ROUTES = {
     "r1": {"start": "palmgrove", "stops": ["eatup", "chopper", "fivediner"], "end": "totalwine"},
-    "r2": {"start": "peakplaza", "stops": ["swizzle", "fivediner", "luckyboy"], "end": None},
     "r3": {"start": "desertsun", "stops": ["bikini", "welcome", "macalpines"], "end": "azcenter"},
     "r4": {"start": "bethanytowne", "stops": ["sonicbethany", "dennysbethany", "skippers"], "end": "bethanysq"},
-    "r5": {"start": "milltowne", "stops": ["monkeypants", "sonictempe", "sunnys"], "end": "tempemkt"},
-    "r6": {"start": None, "stops": ["hamburgerworks", "joes", "baruptown"], "end": None},
-    "r7": {"start": None, "stops": ["denny7th", "harveys", "luckyboy"], "end": None},
 }
 
 out = {}

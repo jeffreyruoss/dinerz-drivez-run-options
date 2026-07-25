@@ -199,6 +199,18 @@ h1,h2,h3,h4{margin:0;}
 }
 .placemat p{margin:0; font-size:14.5px; color:var(--ink-2);}
 .placemat b{color:var(--cherry-dk);}
+.placemat .cutoff{
+  margin-top:14px;
+  padding-top:13px;
+  border-top:1.5px solid var(--chrome-2);
+  font-size:13px;
+}
+.placemat .cutoff b:first-child{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
 
 .legend{
   display:flex; flex-wrap:wrap; gap:10px 20px;
@@ -383,6 +395,7 @@ h1,h2,h3,h4{margin:0;}
   padding:3px 11px;
   box-shadow:2px 2px 0 rgba(0,0,0,.3);
 }
+.flag.warn{background:var(--paper); color:var(--warn);}
 
 .odometer{
   flex:0 0 auto;

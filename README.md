@@ -1,10 +1,19 @@
 # Dinerz, Drive-Inz & Divez — Route Options
 
-Seven Phoenix-area run routes, each hitting a sit-down **diner**, a **drive-in** you can go
+Phoenix-area run routes, each hitting a sit-down **diner**, a **drive-in** you can go
 inside, and a **dive bar** — with the running distance between the three stops shown
 separately from the walk to and from parking.
 
 Static site, 1950s diner styling. No build step.
+
+## Scoped to a 6:30pm Saturday start
+
+Seven routes were scouted; the page shows the **three** where all three stops are still
+open at 6:30pm on a Saturday. Dropped: routes 02 and 07 (Lucky Boy closes 6pm Sat),
+05 (Sunny's Diner, 3pm) and 06 (Joe's Diner, 2pm). Route numbering is unchanged so the
+surviving routes keep the names people already know them by.
+
+Route 03 is the tight one — MacAlpine's is its last stop and closes at 8pm.
 
 ## What's here
 
